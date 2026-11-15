@@ -1,7 +1,7 @@
-# euris-test
+# ecommerce-test
 
-[![CI/CD Pipeline](https://github.com/mansville/euris-test/actions/workflows/ci-cd.yaml/badge.svg)](https://github.com/mansville/euris-test/actions/workflows/ci-cd.yaml)
-[![Latest Release](https://img.shields.io/github/v/release/mansville/euris-test?color=blue&label=Latest%20Release)](https://github.com/mansville/euris-test/releases/latest)
+[![CI/CD Pipeline](https://github.com/mansville/ecommerce-test/actions/workflows/ci-cd.yaml/badge.svg)](https://github.com/mansville/ecommerce-test/actions/workflows/ci-cd.yaml)
+[![Latest Release](https://img.shields.io/github/v/release/mansville/ecommerce-test?color=blue&label=Latest%20Release)](https://github.com/mansville/ecommerce-test/releases/latest)
 ![Java 21](https://img.shields.io/badge/Java-21-orange.svg)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.2-brightgreen.svg)
 
@@ -37,7 +37,7 @@ L'applicazione è sviluppata con **Java 21** e **Spring Boot 4.1.2** e adotta un
 
 È possibile scaricare direttamente l'eseguibile precompilato dell'ultima versione rilasciata:
 
-1. Scaricare il file `.jar` dell'ultima versione rilasciata su GitHub: 👉 **[Latest Release](https://github.com/mansville/euris-test/releases/latest)**
+1. Scaricare il file `.jar` dell'ultima versione rilasciata su GitHub: 👉 **[Latest Release](https://github.com/mansville/ecommerce-test/releases/latest)**
 2. Aprire un terminale nella directory contenente il file appena scaricato
 3. Avvia l'applicazione con il comando:
    ```bash
@@ -55,8 +55,8 @@ Per avviare in locale l'intera suite di test automatizzati:
 
 1. **Clonare il repository**:
    ```bash
-   git clone https://github.com/mansville/euris-test.git
-   cd euris-test
+   git clone https://github.com/mansville/ecommerce-test.git
+   cd ecommerce-test
    ```
 2. **Lanciare `clean test` usando il Maven Wrapper**:
    - **Linux / macOS**:
@@ -81,14 +81,14 @@ Il progetto è già interamente predisposto per connettersi a un vero database d
 
 ### 1. Avvio con PostgreSQL in Locale
 
-Lanciare prima un'istanza di PostgreSQL (porta `5432`, database `euris`, username `test`, password `test`, interamente personalizzabile modificando il file `src/main/resources/application-prod.yaml`), poi avviare l'applicazione con il comando:
+Lanciare prima un'istanza di PostgreSQL (porta `5432`, database `test`, username `test`, password `test`, interamente personalizzabile modificando il file `src/main/resources/application-prod.yaml`), poi avviare l'applicazione con il comando:
 ```bash
 java -jar target/app.jar --spring.profiles.active=prod
 ```
 oppure sovrascrivere i parametri di connessione direttamente nel terminale usando le variabili d'ambiente:
 ```bash
 SPRING_PROFILES_ACTIVE=prod \
-SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/euris \
+SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/test \
 SPRING_DATASOURCE_USER=test \
 SPRING_DATASOURCE_PASSWORD=test \
 java -jar target/app.jar
@@ -109,7 +109,7 @@ Quando l'applicazione è in esecuzione con il profilo predefinito `dev`, sono ac
 
 | Strumento          | Endpoint                                                                   | Note                                                                                                                  |
 |:-------------------|:---------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
-| **Console H2**     | [`http://localhost:8080/h2`](http://localhost:8080/h2)                     | **Url**: `jdbc:h2:mem:euris;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE`<br>**Username**: `test`<br>**Password**: `test` |
+| **Console H2**     | [`http://localhost:8080/h2`](http://localhost:8080/h2)                     | **Url**: `jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE`<br>**Username**: `test`<br>**Password**: `test` |
 | **OpenAPI (JSON)** | [`http://localhost:8080/docs`](http://localhost:8080/docs)                 | Documentazione OpenAPI 3.0 in formato JSON                                                                            |
 | **Swagger UI**     | [`http://localhost:8080/swagger.html`](http://localhost:8080/swagger.html) | Interfaccia interattiva per esplorare e testare le API REST                                                           |
 
