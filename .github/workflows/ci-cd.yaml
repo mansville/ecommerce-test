@@ -16,7 +16,7 @@ jobs:
         image: postgres:18-alpine
         ports: [ "5432:5432" ]
         env:
-          POSTGRES_DB: euris
+          POSTGRES_DB: test
           POSTGRES_USER: test
           POSTGRES_PASSWORD: test
         options: >-
@@ -92,5 +92,5 @@ jobs:
           context: .
           push: true
           tags: |-
-            ghcr.io/mansville/euris-test:${{ steps.tag.outputs.new_tag }}
-            ghcr.io/mansville/euris-test:latest
+            ghcr.io/mansville/ecommerce-test:${{ steps.tag.outputs.new_tag }}
+            ghcr.io/mansville/ecommerce-test:latest

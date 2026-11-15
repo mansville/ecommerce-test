@@ -1,6 +1,6 @@
 spring:
   application:
-    name: euris-test
+    name: ecommerce-test
   profiles:
     active: dev
   threads:

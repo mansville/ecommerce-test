@@ -13,7 +13,7 @@ services:
     networks: [ app-net ]
     volumes: [ "pgdata:/var/lib/postgresql" ]
     environment:
-      POSTGRES_DB: euris
+      POSTGRES_DB: test
       POSTGRES_USER: test
       POSTGRES_PASSWORD: test
     healthcheck:
@@ -27,14 +27,14 @@ services:
           memory: 1G
 
   app:
-    image: ghcr.io/mansville/euris-test:latest
-    container_name: euris-test
+    image: ghcr.io/mansville/ecommerce-test:latest
+    container_name: ecommerce-test
     restart: unless-stopped
     networks: [ app-net ]
     ports: [ "8080:8080" ]
     environment:
       - SPRING_PROFILES_ACTIVE=prod
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/euris
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/test
     depends_on:
       database:
         condition: service_healthy
